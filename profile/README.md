@@ -13,7 +13,7 @@
 
 歡迎加入 DoughOps
 
-> GitHub Org：[https://github.com/orgs/t-community](https://github.com/orgs/DoughOps)
+> GitHub Org：[https://github.com/orgs/DoughOps](https://github.com/orgs/DoughOps)
 
 ---
 
@@ -56,16 +56,16 @@
 
 ### 內部開發專案
 
-#### [`inventory-api`](https://github.com/t-community/inventory-api)
+#### [`inventory-api`](https://github.com/DoughOps/inventory-api)
 基於 **Django REST Framework** 開發的虛擬化資源管理系統後端 API（Python）。
 提供多租戶環境下虛擬機、Kubernetes 叢集等資源的調度與管理介面。
 支援 VS Code Dev Container，clone 後即可啟動開發環境。
 
-#### [`inventory-ui`](https://github.com/t-community/inventory-ui)
+#### [`inventory-ui`](https://github.com/DoughOps/inventory-ui)
 對應 inventory-api 的 **React 前端**（TypeScript），內部稱為 **VirtFlow**。
 提供儀表板、實體基礎設施管理、VM 管理、K8s 叢集管理等介面。
 
-#### [`ai-coding-flow`](https://github.com/t-community/ai-coding-flow)
+#### [`ai-coding-flow`](https://github.com/DoughOps/ai-coding-flow)
 **自主 AI 開發工作流**。監聽 GitHub / GitLab 上的 Issue，由 AI 自動撰寫程式、執行測試、開 PR/MR 並留下 Code Review 意見，全程不需人工介入，只需最後決定是否 merge。
 同時支援 GitHub 與自建 GitLab，也可搭配本地 LLM（Ollama 等）離線運作。
 
@@ -73,32 +73,32 @@
 
 ### Helm Chart
 
-#### [`helm-api-service`](https://github.com/t-community/helm-api-service)
+#### [`helm-api-service`](https://github.com/DoughOps/helm-api-service)
 Production-ready 的**通用 API Service Helm Chart**，可快速將容器化的後端服務部署至 Kubernetes 叢集，減少各專案重複撰寫 Helm Chart 的成本。
 
 ---
 
 ### Fork 的開源專案（客製化維護）
 
-#### [`coredns`](https://github.com/t-community/coredns)
+#### [`coredns`](https://github.com/DoughOps/coredns)
 **CoreDNS** 的 fork — 以 Plugin 串接方式運作的 DNS Server，以 Go 撰寫。
 若需要客製化 DNS 解析邏輯，可在此 fork 上進行修改，同時保有追蹤上游更新的能力。
 
-#### [`nftables-exporter`](https://github.com/t-community/nftables-exporter)
+#### [`nftables-exporter`](https://github.com/DoughOps/nftables-exporter)
 **nftables Prometheus Exporter** 的 fork（Go）。
 將 nftables 的統計指標匯出至 Prometheus，供監控平台使用。
 
-#### [`galaxy-operator`](https://github.com/t-community/galaxy-operator)
+#### [`galaxy-operator`](https://github.com/DoughOps/galaxy-operator)
 **Ansible Galaxy Operator** 的 fork，以 Ansible Operator SDK 實作的 Kubernetes Operator，用於在 K8s 上部署與管理 Ansible Galaxy NG（私有 Ansible Role / Collection 倉庫）。
 
-#### [`conductor`](https://github.com/t-community/conductor)
+#### [`conductor`](https://github.com/DoughOps/conductor)
 **Conductor OSS** 的 fork — 事件驅動的 Agentic Workflow Engine（Java），具備高可靠性與擴展性，適合作為 AI Agent 或複雜業務流程的執行引擎。
 
 ---
 
 ### MCP Server
 
-#### [`gitlab-mcp`](https://github.com/t-community/gitlab-mcp)
+#### [`gitlab-mcp`](https://github.com/DoughOps/gitlab-mcp)
 **GitLab MCP Server**（TypeScript）。
 讓 AI 客戶端（Claude、Cursor、VS Code Copilot 等）透過 MCP 協議操作 GitLab，支援 Project、MR、Issue、Pipeline、Wiki 等功能，同時支援 PAT / OAuth 及 Self-hosted GitLab。
 
@@ -106,7 +106,7 @@ Production-ready 的**通用 API Service Helm Chart**，可快速將容器化的
 
 ### Org 設定
 
-#### [`.github`](https://github.com/t-community/.github)
+#### [`.github`](https://github.com/DoughOps/.github)
 存放 Org 層級的 GitHub 設定，包含 Org Profile、共用 Issue / PR 範本、共用 GitHub Actions Workflow 等。
 
 ---
@@ -120,22 +120,22 @@ Production-ready 的**通用 API Service Helm Chart**，可快速將容器化的
 | | Docker Hub（目前） | GHCR |
 |---|---|---|
 | 費用 | 超過限制需付費 | **免費**（Public image 無上限） |
-| 歸屬 | 散落在個人帳號 | 統一屬於 `t-community` org |
+| 歸屬 | 散落在個人帳號 | 統一屬於 `DoughOps` org |
 | 可見性 | 各自管理，不易發現 | 集中在 org 下，一目了然 |
 | 存取控制 | 帳號各自設定 | 與 GitHub repo 權限整合 |
 
 ### Image 命名慣例
 
 ```
-ghcr.io/t-community/<repo-name>:<tag>
+ghcr.io/DoughOps/<repo-name>:<tag>
 ```
 
 範例：
 
 ```
-ghcr.io/t-community/inventory-api:latest
-ghcr.io/t-community/inventory-api:v1.2.0
-ghcr.io/t-community/ai-coding-flow:main
+ghcr.io/DoughOps/inventory-api:latest
+ghcr.io/DoughOps/inventory-api:v1.2.0
+ghcr.io/DoughOps/ai-coding-flow:main
 ```
 
 ### 如何在 GitHub Actions 中 Push Image
@@ -152,7 +152,7 @@ ghcr.io/t-community/ai-coding-flow:main
   uses: docker/build-push-action@v5
   with:
     push: true
-    tags: ghcr.io/t-community/<your-repo>:${{ github.sha }}
+    tags: ghcr.io/DoughOps/<your-repo>:${{ github.sha }}
 ```
 
 > `GITHUB_TOKEN` 是 Actions 自動提供的，不需要額外設定 Secret。
@@ -163,7 +163,7 @@ ghcr.io/t-community/ai-coding-flow:main
 
 ### 1. 加入 Org
 
-聯絡 Org Owner，以 GitHub 帳號申請加入 `t-community` organization 即可。
+聯絡 Org Owner，以 GitHub 帳號申請加入 `DoughOps` organization 即可。
 
 ### 2. 將既有的 Repo 移入
 
@@ -174,7 +174,7 @@ ghcr.io/t-community/ai-coding-flow:main
 
 ### 3. 在 Org 下建立新 Repo
 
-流程與平時相同，選擇在 `t-community` 底下建立即可。建議附上 Description 與基本 README，方便其他人了解用途。
+流程與平時相同，選擇在 `DoughOps` 底下建立即可。建議附上 Description 與基本 README，方便其他人了解用途。
 
 ### 4. 使用共用 CI/CD
 
